@@ -62,8 +62,13 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   background-color: rgb(232, 238, 244);
-  min-height: 300px;
-  padding: 4em;
+  min-height: 150px;
+  padding: 2em;
+
+  @media (min-width: $break-sm) {
+    min-height: 300px;
+    padding: 4em;
+  }
 }
 .links {
   display: grid;
@@ -75,8 +80,8 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   font-size: 1.5em;
   color: #fff;
   transform: translateY(0);
@@ -109,10 +114,20 @@ export default defineComponent({
       background-color: #b387a7;
     }
   }
+
+  @media (min-width: $break-sm) {
+    width: 55px;
+    height: 55px;
+  }
 }
 .svg {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
+
+  @media (min-width: $break-sm) {
+    width: 25px;
+    height: 25px;
+  }
 }
 .copyright {
   margin-top: 1.5em;

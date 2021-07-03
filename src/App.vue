@@ -48,6 +48,22 @@
       <div :class="$style.contacts">
         <Card transparent>
           <h2><strong>Võta meiega ühendust!</strong></h2>
+          <div :class="$style.contactItems">
+            <div>
+              <p>OÜ Remalet</p>
+              <p>Telefon: +372 5058317</p>
+              <p>E-post: info@linalill.ee</p>
+              <p>Äriregistri nr. 11540432</p>
+              <p>Arveldusarve: SEB EE971010220092532013</p>
+            </div>
+            <div>
+              <p>Linaste riiete valmistamise koht:</p>
+              <p>Saaremaa</p>
+              <p>Leisi vald</p>
+              <p>Ratla küla</p>
+              <p>Ilumäe talu</p>
+            </div>
+          </div>
         </Card>
       </div>
     </TheContainer>
@@ -84,14 +100,18 @@ export default defineComponent({
   background-position: top center;
   background-attachment: fixed;
   text-align: center;
-  line-height: 35px;
+  line-height: 28px;
   letter-spacing: 0.5px;
 
   h2 {
     font-weight: 300;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.2em;
     letter-spacing: 0.1em;
+
+    @media (min-width: $break-sm) {
+      font-size: 1.5em;
+    }
   }
 
   p {
@@ -100,6 +120,10 @@ export default defineComponent({
 
   strong {
     font-weight: 400;
+  }
+
+  @media (min-width: $break-sm) {
+    line-height: 35px;
   }
 }
 .facts,
@@ -127,5 +151,16 @@ export default defineComponent({
 .contacts {
   margin: 0 auto;
   max-width: 850px;
+}
+.contactItems {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  font-weight: 400;
+  margin-top: 1.5em;
+
+  @media (min-width: $break-lg) {
+    grid-template-columns: 55% 40%;
+  }
 }
 </style>
