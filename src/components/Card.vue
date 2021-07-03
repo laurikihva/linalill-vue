@@ -15,11 +15,12 @@ export default defineComponent({
       default: "white",
       validator: (t: string) => ["white", "grey"].includes(t),
     },
+    transparent: Boolean,
   },
   computed: {
     computedClasses(): string[] {
-      const { $style, color } = this;
-      return [$style.card, $style[color]];
+      const { $style, color, transparent } = this;
+      return [$style.card, $style[color], transparent ? $style.transparent : ""];
     },
   },
 });
@@ -30,12 +31,22 @@ export default defineComponent({
   padding: 2em;
   font-size: 20px;
   width: 100%;
-}
-.white {
-  background-color: #fff;
-}
-.grey {
-  color: #fff;
-  background-color: #434343;
+
+  &.white {
+    background-color: #fff;
+
+    &.transparent {
+      color: #000;
+      background-color: rgba(#fff, 0.8);
+    }
+  }
+  &.grey {
+    color: #fff;
+    background-color: #434343;
+
+    &.transparent {
+      background-color: rgba(#434343, 0.8);
+    }
+  }
 }
 </style>

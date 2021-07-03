@@ -39,14 +39,19 @@
         küljest, eriti on vaja seda teha värviliste riiete puhul.
       </p>
       <div :class="$style.productsCard">
-        <Card> Meie tooted </Card>
+        <Card>
+          <h2>Meie tooted</h2>
+        </Card>
       </div>
     </TheContainer>
-    <TheContainer :no-background="true">
+    <TheContainer no-background>
       <div :class="$style.contacts">
-        <Card> kontakt </Card>
+        <Card transparent>
+          <h2><strong>Võta meiega ühendust!</strong></h2>
+        </Card>
       </div>
     </TheContainer>
+    <TheFooter />
   </main>
 </template>
 
@@ -56,6 +61,7 @@ import { defineComponent } from "vue";
 import Card from "@/components/Card.vue";
 
 import TheContainer from "@/containers/TheContainer.vue";
+import TheFooter from "@/containers/TheFooter.vue";
 import TheHeader from "@/containers/TheHeader.vue";
 
 export default defineComponent({
@@ -63,6 +69,7 @@ export default defineComponent({
   components: {
     Card,
     TheContainer,
+    TheFooter,
     TheHeader,
   },
 });
@@ -80,8 +87,19 @@ export default defineComponent({
   line-height: 35px;
   letter-spacing: 0.5px;
 
+  h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+  }
+
   p {
     font-size: 20px;
+  }
+
+  strong {
+    font-weight: 400;
   }
 }
 .facts,
